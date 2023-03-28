@@ -53,9 +53,10 @@ impl Todo {
         let map: HashMap<String, String> = content
             .lines()
             .map(|line| line.split(":").collect::<Vec<&str>>())
-            .map(|v| (v[0],v[1]))
+            .map(|v| (v[0].trim(),v[1].trim()))
             .map(|(k,v)| (String::from(k), String::from(v)))
             .collect();
+        println!("{:?}", map);
         Ok(Todo { map })
     }
 
