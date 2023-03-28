@@ -56,7 +56,6 @@ impl Todo {
             .map(|v| (v[0].trim(),v[1].trim()))
             .map(|(k,v)| (String::from(k), String::from(v)))
             .collect();
-        println!("{:?}", map);
         Ok(Todo { map })
     }
 
